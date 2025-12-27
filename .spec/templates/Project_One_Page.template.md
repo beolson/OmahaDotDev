@@ -139,38 +139,33 @@ EXAMPLES:
 
 <!-- AI_REQUIRED: Key Flows
 VALIDATION:
-- Target: 1-3 primary end-to-end flows
-- Each flow should cover the complete customer journey from start to finish
-- Include both happy path and critical edge cases/error scenarios
-- Format can be: prose narrative, numbered steps, acceptance criteria, or references to diagrams
-- Should be specific enough to guide implementation
-- Naturally evolves with design/engineering collaboration over time
-- Edge cases should address realistic failure modes and recovery paths
+- Target: 1-3 primary flows
+- Each flow should be a concise summary (2-4 sentences) describing the purpose and capabilities
+- Focus on what the flow accomplishes and what capabilities it provides, not step-by-step details
+- Include mention of key milestones, stakeholders, and exception handling where relevant
+- Avoid detailed numbered steps or implementation specifics
+- Should give readers a clear mental model of the major user journeys without excessive detail
 
 EXAMPLES:
 ✓ Good:
-"**Flow 1: Guest Checkout to Account Claim**
-1. User adds items to cart, clicks 'Checkout'
-2. System presents guest checkout form (email, shipping address, payment method)
-3. User completes purchase without creating account or password
-4. System sends order confirmation email with 'Claim Your Account' link
-5. User clicks link within 7 days, sets password in single step
-6. Account created with order history pre-populated, user logged in automatically
+"**Flow 1: Annual Sponsor Selection**
+Enables the yearly process where sponsors indicate their preferred event dates and the system randomly assigns winners from interested parties for each slot, automatically creating event stubs and notifying selected sponsors.
 
-**Edge Case: Email Already Has Account**
-- If guest email matches existing account, show 'Sign in to continue' with password reset option
-- After login, merge guest cart with account cart (user chooses to combine or replace)
-- Complete checkout as authenticated user with saved preferences
+**Flow 2: Event Publication Lifecycle**
+Orchestrates the complete event journey from stub creation through publication, coordinating sponsor/presenter assignment, automated content collection triggers at key milestones (4 weeks out), self-service content population, admin review, multi-channel announcements (10 days prior), and RSVP tracking.
 
-**Flow 2: Guest Order Tracking**
-1. User receives order confirmation email with unique tracking link
-2. User clicks link, views order status without login (token-based authentication)
-3. Page shows delivery timeline, tracking number, and support options
-4. Gentle reminder about account benefits (order history, faster future checkouts) with single-click claim option"
+**Flow 3: Exception Management**
+Provides admin override capabilities for handling disruptions including sponsor/presenter substitutions, event rescheduling or cancellation with automatic multi-channel notifications, and payment retry workflows."
 
 ✗ Avoid:
-"User goes to checkout, completes their order as a guest, and can create an account later if they want. They can also track their order."
-(Lacks detail, no step-by-step flow, no edge cases, not actionable for implementation)
+"User goes to checkout and completes their order."
+(Too vague, doesn't describe capabilities or purpose clearly)
+
+✗ Avoid detailed step-by-step:
+"1. User adds items to cart, clicks 'Checkout'
+2. System presents guest checkout form (email, shipping address, payment method)
+3. User completes purchase without creating account..."
+(Too granular; use summary format instead)
 -->
 
 ---
@@ -185,7 +180,7 @@ EXAMPLES:
 - [ ] Goals: 2-5 prioritized, outcome-oriented goals (mix of measurable and qualitative)
 - [ ] Non-Goals: 1-4 items with rationale explaining scope boundaries
 - [ ] Key Features: 3-7 prioritized features defining solution perimeter
-- [ ] Key Flows: 1-3 complete end-to-end flows with edge cases
+- [ ] Key Flows: 1-3 concise flow summaries describing purpose and capabilities
 - [ ] No placeholder text remains (no "TBD", "TODO", "[To be determined]", etc.)
 - [ ] All content is specific and actionable (avoid vague statements)
 - [ ] Document follows validation guidance in each section
